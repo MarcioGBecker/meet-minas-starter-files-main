@@ -64,6 +64,10 @@ section {
 	padding: 1.6rem
 }
 
+section:nth-child(odd) {
+	background: var(--clr-light-green);
+}
+
 img {
 	max-width: 100%;
 	height: auto;
@@ -80,6 +84,13 @@ img {
 
 .section__titulo--destaque {
 	color: var(--clr-medium-green);
+}
+
+@media screen and (min-width: 625px) {
+	section:nth-child(odd) {
+		padding-top: 5.6rem;
+		padding-bottom: 5.6rem;
+	}
 }
 
 @media screen and (min-width: 1170px) {
@@ -315,7 +326,60 @@ img {
 /* 5. Diferenciais
 /**********************************/
 
+.diferenciais {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
 
+.diferencial + .diferencial {
+	margin-top: 1.6rem;
+}
+
+.diferencial__titulo {
+	font-size: 2.4rem;
+	font-weight: 400;
+	text-transform: uppercase;
+	display: flex;
+	align-items: center;
+}
+
+.diferencial__descricao {
+	width: 28.8rem;
+}
+
+.diferencial__titulo::before {
+	content: "";
+	background-color: var(--clr-black);
+	color: var(--clr-white);
+	padding: 1rem;
+	margin-right: .8rem;
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	font-size: 3.6rem;
+}
+
+.diferencial__titulo--carteira::before {
+	content: "\f555";
+}
+
+.diferencial__titulo--mapa::before {
+	content: "\f5a0"
+}
+
+.diferencial__titulo--meias::before {
+	content: "\f696"
+}
+
+@media screen and (min-width: 625px) {
+	.diferenciais {
+		justify-content: space-between;
+	}
+
+	.diferenciais + .diferenciais {
+		margin-top: 0;
+	}
+}
 
 /**********************************/
 /* 6. Pacotes 
