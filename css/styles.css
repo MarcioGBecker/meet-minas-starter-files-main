@@ -772,7 +772,7 @@ img {
 	color: var(--clr-medium-green);
 }
 
-.slider-image__description {
+.slider-image-description {
 	background: var(--clr-black);
 	text-align: center;
 }
