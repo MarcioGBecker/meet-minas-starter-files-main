@@ -106,6 +106,8 @@ const getImageId = (target) => {
 	const arrFromChildren = Array.from(target.parentNode.children);
 	const id = arrFromChildren.indexOf(target);
 
+	_sliderCounter = id;
+
 	return id;
 }
 
@@ -122,11 +124,17 @@ const updateModal = (imgId) => {
 }
 
 const nextImage = () => {
-
+	if (++_sliderCounter > 7){
+		_sliderCounter = 0
+	}
+	updateModal(_sliderCounter);
 }
 
 const prevImage = () => {
-
+	if (--_sliderCounter < 0){
+		_sliderCounter = _gallery.length - 1;
+	}
+	updateModal(_sliderCounter)
 }
 
 /**************************************************************************/
